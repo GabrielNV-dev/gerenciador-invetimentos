@@ -1,33 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus Investimentos</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/page_principal.css') }}">
+
+    <title>GenIn | Gerenciador de Investimentos</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/page_principal.css') }}">
+
 </head>
+
 
 <body>
 
-    <div class="container">
 
-        <h1>Bem vindo</h1>
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>GenIn</span>
+        </div>
+
+
+        <div class="menu">
+
+            <a href="/" class="ativo">
+                Início
+            </a>
+
+            <a href="/investimentos">
+                Investimentos
+            </a>
+
+            <a href="/sobre">
+                Sobre
+            </a>
+
+            <a href="/infos">
+                Informações
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <!-- LADO ESQUERDO -->
+
+    <div class="conteudo">
+
+        <span class="tag">
+            GERENCIAMENTO DE INVESTIMENTOS
+        </span>
+
+
+        <h1>
+            Controle seus
+            <br>
+            <span>investimentos.</span>
+        </h1>
+
+
+        <p class="descricao">
+
+            Tenha seus investimentos organizados em um único lugar.
+            Cadastre, acompanhe e visualize sua carteira de forma
+            simples, rápida e intuitiva.
+
+        </p>
+
 
         <div class="botoes">
-            <button onclick="window.location.href='investimentos'">
-                Investimentos
+
+            <button
+                class="principal"
+                onclick="window.location.href='/investimentos'">
+
+                Ver investimentos
+
             </button>
 
-            <button onclick="window.location.href='sobre.html'">
-                Sobre
+
+            <button
+                onclick="window.location.href='/sobre'">
+
+                Conheça o projeto
+
             </button>
 
-            <button onclick="window.location.href='infos.html'">
-                Infos
-            </button>
         </div>
 
     </div>
 
+
+
+    <!-- CARD DIREITO -->
+
+    <div class="invest-card">
+
+
+        <div class="card-header">
+
+            <span>
+                VISÃO GERAL
+            </span>
+
+            <span class="status">
+                ● ATIVO
+            </span>
+
+        </div>
+
+
+
+        <div class="valor">
+
+            R$ 25.840,00
+
+        </div>
+
+
+        <div class="rendimento">
+
+            +12,48% no período
+
+        </div>
+
+
+
+        <!-- GRÁFICO -->
+
+        <div class="grafico">
+
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+            <div class="barra"></div>
+
+        </div>
+
+
+
+        <!-- INFORMAÇÕES -->
+
+        <div class="card-info">
+
+            <div class="info-item">
+
+                <span>
+                    INVESTIDO
+                </span>
+
+                <strong>
+                    R$ 22.980
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>
+                    RENDIMENTO
+                </span>
+
+                <strong>
+                    +R$ 2.860
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>
+                    ATIVOS
+                </span>
+
+                <strong>
+                    08
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
 </body>
+
 </html>

@@ -43,7 +43,6 @@ header {
     justify-content: space-between;
 }
 
-
 /* LOGO */
 
 .logo {
@@ -138,55 +137,6 @@ header {
     gap: 80px;
 }
 
-
-/* =========================
-   TEXTO
-========================= */
-
-.conteudo {
-    max-width: 650px;
-}
-
-.tag {
-    display: inline-block;
-
-    color: #777;
-
-    font-size: 12px;
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 25px;
-}
-
-h1 {
-    font-size: clamp(55px, 7vw, 90px);
-
-    line-height: 0.95;
-
-    letter-spacing: -5px;
-
-    margin-bottom: 30px;
-}
-
-h1 span {
-    color: #555;
-}
-
-.descricao {
-    max-width: 560px;
-
-    color: #888;
-
-    font-size: 17px;
-
-    line-height: 1.7;
-
-    margin-bottom: 40px;
-}
-
-
 /* =========================
    BOTÕES
 ========================= */
@@ -204,7 +154,7 @@ button {
     font-size: 14px;
     font-weight: bold;
 
-    color: white;
+    color: rgb(38, 0, 255);
 
     background: #151515;
 
@@ -227,7 +177,7 @@ button:hover {
 }
 
 button.principal {
-    background: white;
+    background: rgb(255, 255, 255);
     color: #080808;
 
     border-color: white;
@@ -236,171 +186,6 @@ button.principal {
 button.principal:hover {
     background: #ccc;
     border-color: #ccc;
-}
-
-
-/* =========================
-   CARD DE INVESTIMENTOS
-========================= */
-
-.invest-card {
-    width: 370px;
-
-    background: #101010;
-
-    border: 1px solid #292929;
-
-    border-radius: 10px;
-
-    padding: 30px;
-
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.5);
-
-    transition: 0.4s;
-}
-
-.invest-card:hover {
-    transform: translateY(-8px);
-
-    border-color: #444;
-}
-
-
-/* TOPO DO CARD */
-
-.card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    color: #777;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-}
-
-.status {
-    color: #aaa;
-}
-
-
-/* VALOR */
-
-.valor {
-    margin-top: 35px;
-
-    font-size: 38px;
-    font-weight: bold;
-}
-
-.rendimento {
-    margin-top: 5px;
-
-    color: #999;
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   GRÁFICO
-========================= */
-
-.grafico {
-    height: 150px;
-
-    margin-top: 35px;
-
-    display: flex;
-    align-items: end;
-
-    gap: 8px;
-
-    border-bottom: 1px solid #292929;
-}
-
-.barra {
-    flex: 1;
-
-    min-height: 10px;
-
-    background: #444;
-
-    border-radius: 3px 3px 0 0;
-
-    transition: 0.3s;
-}
-
-.barra:hover {
-    background: #888;
-
-    transform: scaleY(1.05);
-}
-
-.barra:nth-child(1) {
-    height: 25%;
-}
-
-.barra:nth-child(2) {
-    height: 40%;
-}
-
-.barra:nth-child(3) {
-    height: 35%;
-}
-
-.barra:nth-child(4) {
-    height: 55%;
-}
-
-.barra:nth-child(5) {
-    height: 48%;
-}
-
-.barra:nth-child(6) {
-    height: 70%;
-}
-
-.barra:nth-child(7) {
-    height: 62%;
-}
-
-.barra:nth-child(8) {
-    height: 82%;
-}
-
-.barra:nth-child(9) {
-    height: 95%;
-}
-
-
-/* =========================
-   INFORMAÇÕES DO CARD
-========================= */
-
-.card-info {
-    display: flex;
-
-    justify-content: space-between;
-
-    margin-top: 20px;
-}
-
-.info-item span {
-    display: block;
-
-    color: #555;
-
-    font-size: 10px;
-
-    margin-bottom: 4px;
-}
-
-.info-item strong {
-    font-size: 14px;
-    color: #aaa;
 }
 
 
@@ -484,13 +269,5 @@ button.principal:hover {
 
     button {
         flex: 1;
-    }
-
-    .invest-card {
-        padding: 22px;
-    }
-
-    .valor {
-        font-size: 30px;
     }
 }

@@ -15,8 +15,17 @@ def sobre():
     return render_template("html/sobre.html")
 
 @app.route("/infos")
-def investimento():
+def infos():
     return render_template("html/infos.html")
+
+
+@app.route("/investimentos/ativos")
+def ativos():
+
+    with open("investimentos.txt", "r", encoding="utf-8") as f:
+        infos = f.read()
+
+    return infos
 
 
 app.run(debug=True)

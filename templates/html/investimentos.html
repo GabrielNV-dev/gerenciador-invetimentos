@@ -1,10 +1,55 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GenIn | Gerenciador de Investimentos</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/investimentos.css') }}">
+
 </head>
+
 <body>
-    <p>RONALDO</p>
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <span>GenIn</span>
+            </div>
+
+            <div class="menu">
+                <a href="/">
+                    Início
+                </a>
+                <a href="/investimentos" class="ativo">
+                    Investimentos
+                </a>
+                <a href="/sobre">
+                    Sobre
+                </a>
+                <a href="/infos">
+                    Informações
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="conteudo">
+            <div class="botoes">
+                <button class="principal" id="cadastrar-inv"> Adicione investimentos
+                </button>
+            </div>
+        </div>
+
+    </main>
 </body>
+    <script
+        src="{{ url_for('static', filename='js/investimentos.js') }}">
+    </script>
 </html>

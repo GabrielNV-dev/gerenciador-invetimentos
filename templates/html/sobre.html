@@ -1,11 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre o Projeto</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre.css') }}">
 </head>
+
 <body>
-    <div></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span>GenIn</span>
+            </div>
+
+            <div class="menu">
+                <a href="/">Início</a>
+                <a href="/investimentos">Investimentos</a>
+                <a href="/sobre" class="ativo">Sobre</a>
+                <a href="/infos">Informações</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+        <section class="hero">
+            <div class="hero-text">
+                <span class="tag">SOBRE O PROJETO</span>
+
+                <h1>
+                    Seu dinheiro.
+                    <br>
+                    <span>Seu controle.</span>
+                </h1>
+
+                <p>
+                    O projeto consiste no desenvolvimento de um
+                    <strong>gerenciador de investimentos</strong>,
+                    criado para facilitar o cadastro, acompanhamento
+                    e organização dos investimentos de um usuário.
+                </p>
+
+                <p>
+                    A ideia é reunir todas as informações em um único
+                    lugar, permitindo que o usuário tenha uma
+                    <strong>visão geral de sua carteira</strong> e
+                    consiga acompanhar melhor sua evolução financeira.
+                </p>
+            </div>
+
+            <div class="hero-card">
+                <div class="card-top">
+                    <span>VISÃO GERAL</span>
+                    <span class="status">● ONLINE</span>
+                </div>
+
+                <div class="valor">
+                    R$ 25.840,00
+                </div>
+
+                <div class="lucro">
+                    +12,48%
+                </div>
+
+                <div class="grafico">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- OBJETIVO -->
+        <section class="section">
+            <div class="section-title">
+                <span>01</span>
+                <h2>Ideia do projeto</h2>
+            </div>
+
+            <div class="content">
+                <p>
+                    A principal ideia do projeto é criar uma plataforma
+                    simples e intuitiva para que o usuário possa
+                    <strong>gerenciar seus investimentos</strong> de
+                    maneira organizada.
+                </p>
+
+                <p>
+                    Por meio do sistema, será possível cadastrar
+                    diferentes tipos de investimentos, armazenar suas
+                    informações e acompanhar seus valores ao longo do
+                    tempo.
+                </p>
+
+                <p>
+                    Dessa forma, o usuário poderá ter uma visão mais
+                    clara de onde seu dinheiro está investido e como
+                    sua carteira está se comportando.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- FUNCIONALIDADES -->
+        <section class="section">
+
+            <div class="section-title">
+                <span>02</span>
+                <h2>Principais funcionalidades</h2>
+            </div>
+
+            <div class="cards">
+
+                <div class="feature-card">
+                    <div class="icon">＋</div>
+                    <h3>Cadastrar investimentos</h3>
+                    <p>
+                        Permite adicionar novos investimentos,
+                        registrando informações importantes como
+                        tipo, valor, quantidade e data.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">◉</div>
+                    <h3>Acompanhar investimentos</h3>
+                    <p>
+                        Visualize os investimentos cadastrados e
+                        acompanhe suas informações de forma simples
+                        e organizada.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">↗</div>
+                    <h3>Visão geral</h3>
+                    <p>
+                        Tenha uma visão geral da carteira, facilitando
+                        a análise dos valores e da distribuição dos
+                        investimentos.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">▣</div>
+                    <h3>Organização</h3>
+                    <p>
+                        Centralize as informações dos investimentos
+                        em um único sistema, tornando o gerenciamento
+                        mais prático.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- TECNOLOGIAS -->
+        <section class="section tecnologias">
+
+            <div class="section-title">
+                <span>03</span>
+                <h2>Tecnologias utilizadas</h2>
+            </div>
+
+            <p class="tech-intro">
+                O projeto utiliza diferentes tecnologias para construir
+                tanto a interface quanto a lógica e o funcionamento
+                do sistema.
+            </p>
+
+            <div class="tech-grid">
+
+                <div class="tech">
+                    <div class="tech-icon">PY</div>
+                    <div>
+                        <h3>Python</h3>
+                        <p>
+                            Linguagem utilizada no desenvolvimento
+                            da lógica principal da aplicação.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech">
+                    <div class="tech-icon">FL</div>
+                    <div>
+                        <h3>Flask</h3>
+                        <p>
+                            Framework responsável pela aplicação web,
+                            rotas e comunicação entre o sistema e as
+                            páginas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech">
+                    <div class="tech-icon">&lt;/&gt;</div>
+                    <div>
+                        <h3>HTML</h3>
+                        <p>
+                            Utilizado para estruturar as páginas e
+                            os elementos da aplicação.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech">
+                    <div class="tech-icon">#</div>
+                    <div>
+                        <h3>CSS</h3>
+                        <p>
+                            Responsável pelo design, aparência,
+                            organização e responsividade.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech">
+                    <div class="tech-icon">JS</div>
+                    <div>
+                        <h3>JavaScript</h3>
+                        <p>
+                            Utilizado para adicionar interatividade
+                            e funcionalidades dinâmicas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech">
+                    <div class="tech-icon">DB</div>
+                    <div>
+                        <h3>Banco de dados local</h3>
+                        <p>
+                            Utilizado para armazenar e organizar os
+                            dados relacionados aos investimentos e investidores.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- FLUXO -->
+        <section class="section">
+
+            <div class="section-title">
+                <span>04</span>
+                <h2>Como o sistema funciona?</h2>
+            </div>
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="number">01</div>
+                    <h3>Cadastro</h3>
+                    <p>
+                        O usuário cadastra seus investimentos no sistema.
+                    </p>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="step">
+                    <div class="number">02</div>
+                    <h3>Organização</h3>
+                    <p>
+                        Os dados são armazenados e organizados.
+                    </p>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="step">
+                    <div class="number">03</div>
+                    <h3>Acompanhamento</h3>
+                    <p>
+                        O usuário acompanha os investimentos cadastrados.
+                    </p>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="step">
+                    <div class="number">04</div>
+                    <h3>Análise</h3>
+                    <p>
+                        Uma visão geral ajuda na análise da carteira.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CONCLUSÃO -->
+        <section class="conclusao">
+
+            <span class="tag">OBJETIVO FINAL</span>
+
+            <h2>
+                Tornar o gerenciamento de investimentos
+                <span>mais simples.</span>
+            </h2>
+
+            <p>
+                O projeto busca unir tecnologia e organização financeira
+                em uma única aplicação, oferecendo ao usuário uma forma
+                prática de acompanhar seus investimentos e compreender
+                melhor sua carteira.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 — Invest Manager</p>
+        <p>Projeto de Gerenciamento de Investimentos</p>
+    </footer>
 
 </body>
 </html>
+
