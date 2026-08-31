@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GenIn | Gerenciador de Investimentos</title>
+    <title>Finza | Gestão Financeira</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/investimentos.css') }}">
 
@@ -19,7 +19,7 @@
         <nav class="navbar">
 
             <div class="logo">
-                <span>GenIn</span>
+                <span>Finza</span>
             </div>
 
             <div class="menu">
@@ -38,18 +38,11 @@
             </div>
         </nav>
     </header>
-
-    <main class="container">
-        <div class="conteudo">
-            <div class="botoes">
-                <button class="principal" id="cadastrar-inv"> Adicione investimentos
-                </button>
-            </div>
-        </div>
-
-    </main>
+    <div id=conteudo>
+        <button class="principal" id="cadastrar-inv">Adicione investimentos</button>
+    </div>
 </body>
-    <script
-        src="{{ url_for('static', filename='js/investimentos.js') }}">
-    </script>
+<script src="{{ url_for('static', filename='js/investimentos.js') }}">
+</script>
+
 </html>

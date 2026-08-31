@@ -1,6 +1,2 @@
 [
-    {
-        "nome": "ronaldo",
-        "real": 1000
-    }
 ]

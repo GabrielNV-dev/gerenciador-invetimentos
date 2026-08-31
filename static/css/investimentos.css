@@ -116,41 +116,18 @@ header {
 .menu .ativo {
     color: white;
 }
-
-
-/* =========================
-   CONTAINER PRINCIPAL
-========================= */
-
-.container {
-    max-width: 1200px;
-
-    min-height: calc(100vh - 80px);
-
-    margin: auto;
-    padding: 40px 25px;
-
+#conteudo{
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-
-    gap: 80px;
+    margin-top: 150px;
+    width: 100%;
 }
-
-/* =========================
-   BOTÕES
-========================= */
-
-.botoes {
-    display: flex;
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
 button {
-    padding: 15px 25px;
-
+    padding: 10px 15px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
     font-size: 14px;
     font-weight: bold;
 
@@ -179,7 +156,6 @@ button:hover {
 button.principal {
     background: rgb(255, 255, 255);
     color: #080808;
-
     border-color: white;
 }
 
@@ -201,28 +177,6 @@ button.principal:hover {
 
     .menu {
         gap: 15px;
-    }
-
-    .container {
-        min-height: auto;
-
-        padding-top: 80px;
-        padding-bottom: 80px;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 60px;
-    }
-
-    .invest-card {
-        width: 100%;
-        max-width: 500px;
-    }
-
-    h1 {
-        font-size: 65px;
     }
 }
 
@@ -249,25 +203,12 @@ button.principal:hover {
         justify-content: center;
     }
 
-    .container {
-        padding: 60px 20px;
-    }
-
-    h1 {
-        font-size: 52px;
-
-        letter-spacing: -3px;
-    }
-
-    .descricao {
-        font-size: 15px;
-    }
 
     .botoes {
         width: 100%;
     }
 
     button {
-        flex: 1;
+        flex: 0;
     }
 }
