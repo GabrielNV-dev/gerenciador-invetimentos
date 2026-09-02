@@ -34,14 +34,28 @@ requisicao.then(resposta => resposta.json())
             event.preventDefault();
 
             const nome = document.getElementById("nome").value;
+            const data = document.getElementById("data").value;
+            const tipo = document.getElementById("tipo").value;
             const valor = document.getElementById("valor").value;
-            const nome = document.getElementById("nome").value;
-            const nome = document.getElementById("nome").value;
-            const nome = document.getElementById("nome").value;
-            const nome = document.getElementById("nome").value;
-            
-            investimentos[nome] = valor;
+            const juros = document.getElementById("juros").value;
+            const periodicidade = document.getElementById("periodicidade").value;
+            const amortizacao = document.getElementById("amortizacao").value;
+
+            investimentos[nome] = {
+                tipo: tipo,
+                valor: valor,
+                juros: juros,
+                periodicidade: periodicidade,
+                amortizacao: amortizacao
+            };
+
             console.log(investimentos);
+            fetch("/investimentos/ativos/entry", {method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(investimentos)
+            })
+                .then(response => response.json())
+                .then(data => {console.log(data);});
         });
 
     })
