@@ -192,8 +192,8 @@ button.principal:hover {
     color: #222;
 }
 #centralInvestimentos {
-    height: 60vh;
-    width: 60vw;
+    height: 80vh;
+    width: 80vw;
 
     position: absolute;
     top: 50%;
@@ -205,10 +205,10 @@ button.principal:hover {
 
     justify-content: center;
     align-content: flex-start;
-    border-radius: 10px;
+    border-radius: 10px;    
     gap: 10px;
 
-    background-color: #ff0000;
+    background-color: #000000da;
 
     overflow-y: auto;
 }
@@ -217,7 +217,7 @@ button.principal:hover {
     margin: 10px;
     width: 100px;
     height: 200px;
-    background-color: #e20202;
+    background-color: #1b032279;
     padding: 0 12px;
 }
 .campo input,

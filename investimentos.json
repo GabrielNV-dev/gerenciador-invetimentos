@@ -1,1 +1,29 @@
-{}
+[
+    {
+        "e3we2e21eqwewqewq": {
+            "tipo": "fii",
+            "valor": "3543",
+            "juros": "100%",
+            "periodicidade": "trimestral",
+            "amortizacao": "nao-amortiza"
+        }
+    },
+    {
+        "nome": "e3we2e21eqwewqewqdwq",
+        "data": "2026-09-19",
+        "tipo": "etf",
+        "valor": "3543",
+        "juros": "100%",
+        "periodicidade": "mensal",
+        "amortizacao": "vencimento"
+    },
+    {
+        "nome": "e3we2e21eqwewqewqdwqeqwewq",
+        "data": "2026-09-19",
+        "tipo": "renda-fixa",
+        "valor": "3543",
+        "juros": "100%",
+        "periodicidade": "mensal",
+        "amortizacao": "vencimento"
+    }
+]
