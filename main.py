@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, request
+import json
 
 app = Flask(__name__)
 
@@ -38,9 +39,9 @@ def entrada_ativos():
 def ativos():
 
     with open("investimentos.json", "r", encoding="utf-8") as f:
-        infos = f.read()
+        infos = json.load(f)
 
-    return infos
+    return jsonify(infos)
 
 
 app.run(debug=True)

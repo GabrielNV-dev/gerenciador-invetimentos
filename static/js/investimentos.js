@@ -2,9 +2,9 @@ const requisicao = fetch("http://127.0.0.1:5000/investimentos/ativos");
 
 requisicao.then(resposta => resposta.json())
     .then(dados => {
-
-        if (dados.length == 0) {
+        if (Object.keys(dados).length === 0) {
             document.getElementById("cadastrar-inv").style.padding = "20px";
+            document.getElementById("centralInvestimentos").style.display = "none";
 
         }
         else {
@@ -49,15 +49,21 @@ requisicao.then(resposta => resposta.json())
                 amortizacao: amortizacao
             };
 
-            console.log(investimentos);
-            fetch("/investimentos/ativos/entry", {method: "POST",
+            fetch("/investimentos/ativos/entry", {
+                method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(investimentos)
             })
                 .then(response => response.json())
-                .then(data => {console.log(data);});
+                .then(data => { console.log(data); });
+
         });
 
+        Object.entries(dados).forEach(([nome, investimento]) => {
+            alvo = document.createElement("div")
+            alvo.classList.add("investimento")
+            document.getElementById("central-investimentos").appendChild(alvo);
+        });
     })
     .catch(erro => { console.error("Erro na requisição:", erro); });
 

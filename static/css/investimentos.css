@@ -191,7 +191,35 @@ button.principal:hover {
     font-weight: 600;
     color: #222;
 }
+#centralInvestimentos {
+    height: 60vh;
+    width: 60vw;
 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-content: flex-start;
+    border-radius: 10px;
+    gap: 10px;
+
+    background-color: #ff0000;
+
+    overflow-y: auto;
+}
+
+.investimento{
+    margin: 10px;
+    width: 100px;
+    height: 200px;
+    background-color: #e20202;
+    padding: 0 12px;
+}
 .campo input,
 .campo select {
     width: 100%;
