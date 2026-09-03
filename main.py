@@ -28,21 +28,18 @@ def entrada_ativos():
     caminho_arquivo = "investimentos.json"
     dados = []
 
-    # 1. Se o arquivo já existir, lê o conteúdo atual
     if os.path.exists(caminho_arquivo):
         try:
             with open(caminho_arquivo, "r", encoding="utf-8") as f:
                 conteudo = f.read()
-                if conteudo.strip(): # Verifica se o arquivo não está vazio
+                if conteudo.strip():
                     dados = json.loads(conteudo)
-                    # Se o arquivo antigo continha apenas um dicionário em vez de lista, converte para lista
+
                     if not isinstance(dados, list):
                         dados = [dados]
         except json.JSONDecodeError:
-            # Se o arquivo estiver corrompido, inicia uma lista nova
             dados = []
 
-    # 2. Adiciona o novo investimento à lista
     dados.append(investimento)
 
     # 3. Salva a lista atualizada no arquivo

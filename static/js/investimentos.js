@@ -17,9 +17,16 @@ requisicao.then(resposta => resposta.json())
 
 
         Object.entries(dados).forEach(([nome, investimento]) => {
-            //MODIFICAR AQUI AS TABELAS
+            const nome = investimento[]
+            const data = 
+            const tipo =
+            const valor = 
+            const Juros =
+            const Amortizacao =
+
             let alvo = document.createElement("div")
             alvo.classList.add("investimento")
+            console.log(investimento)
             document.getElementById("centralInvestimentos").appendChild(alvo);
         });
     })

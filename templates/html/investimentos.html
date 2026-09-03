@@ -131,6 +131,68 @@
             </button>
 
         </form>
+       <script>
+    const tipo = document.getElementById("tipo");
+
+    const campoJuros = document.getElementById("juros").closest(".campo");
+    const campoPeriodicidade = document.getElementById("periodicidade").closest(".campo");
+    const campoAmortizacao = document.getElementById("amortizacao").closest(".campo");
+
+    const labelNome = document.querySelector('label[for="valor"]');
+
+    function atualizarCampos() {
+        const valor = tipo.value;
+
+        // Primeiro, mostra tudo
+        campoJuros.style.display = "";
+        campoPeriodicidade.style.display = "";
+        campoAmortizacao.style.display = "";
+
+        // Criptomoeda
+        if (valor === "cripto") {
+            labelNome.textContent = "Quantidade de bitcoin";
+
+            campoJuros.style.display = "none";
+            campoPeriodicidade.style.display = "none";
+            campoAmortizacao.style.display = "none";
+        }
+
+        // Ação
+        else if (valor === "acao") {
+            campoPeriodicidade.style.display = "none";
+            campoAmortizacao.style.display = "none";
+        }
+
+        // FII
+        else if (valor === "fii") {
+            campoAmortizacao.style.display = "none";
+        }
+
+        // ETF
+        else if (valor === "etf") {
+            campoPeriodicidade.style.display = "none";
+            campoAmortizacao.style.display = "none";
+        }
+
+        // Fundo
+        else if (valor === "fundo") {
+            campoAmortizacao.style.display = "none";
+        }
+
+        // Poupança
+        else if (valor === "poupanca") {
+            campoAmortizacao.style.display = "none";
+        }
+
+        // Renda fixa
+        else if (valor === "renda-fixa") {
+            labelNome.textContent = "Nome do investimento";
+        }
+    }
+
+    tipo.addEventListener("change", atualizarCampos);
+</script>
+
     </div>
     <div id="centralInvestimentos"></div>
     <div id=conteudo>

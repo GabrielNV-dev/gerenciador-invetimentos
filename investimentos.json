@@ -1,14 +1,5 @@
 [
     {
-        "e3we2e21eqwewqewq": {
-            "tipo": "fii",
-            "valor": "3543",
-            "juros": "100%",
-            "periodicidade": "trimestral",
-            "amortizacao": "nao-amortiza"
-        }
-    },
-    {
         "nome": "e3we2e21eqwewqewqdwq",
         "data": "2026-09-19",
         "tipo": "etf",
@@ -24,6 +15,24 @@
         "valor": "3543",
         "juros": "100%",
         "periodicidade": "mensal",
+        "amortizacao": "vencimento"
+    },
+    {
+        "nome": "TGRE",
+        "data": "2026-09-09",
+        "tipo": "fii",
+        "valor": "3123.45",
+        "juros": "100%",
+        "periodicidade": "trimestral",
+        "amortizacao": "nao-amortiza"
+    },
+    {
+        "nome": "TGRE",
+        "data": "2026-09-09",
+        "tipo": "fii",
+        "valor": "3123.45",
+        "juros": "100%",
+        "periodicidade": "bimestral",
         "amortizacao": "vencimento"
     }
 ]
