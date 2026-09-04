@@ -48,16 +48,13 @@ header {
 .logo {
     display: flex;
     align-items: center;
-
     font-weight: bold;
     letter-spacing: 3px;
-
     cursor: pointer;
 }
 
 .logo span {
     font-size: 21px;
-
     transition: 0.3s;
 }
 
@@ -76,31 +73,21 @@ header {
 
 .menu a {
     position: relative;
-
     color: #777;
-
     text-decoration: none;
-
     font-size: 14px;
-
     padding: 8px 0;
-
     transition: 0.3s;
 }
 
 .menu a::after {
     content: "";
-
     position: absolute;
-
     left: 0;
     bottom: 0;
-
     width: 0;
     height: 1px;
-
     background: white;
-
     transition: 0.3s;
 }
 
@@ -116,14 +103,16 @@ header {
 .menu .ativo {
     color: white;
 }
-#conteudo{
+
+#conteudo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 150px;
     width: 100%;
-    
+
 }
+
 button {
     padding: 10px 15px;
     font-size: 14px;
@@ -191,6 +180,7 @@ button.principal:hover {
     font-weight: 600;
     color: #222;
 }
+
 #centralInvestimentos {
     height: 80vh;
     width: 80vw;
@@ -205,21 +195,233 @@ button.principal:hover {
 
     justify-content: center;
     align-content: flex-start;
-    border-radius: 10px;    
+    border-radius: 10px;
     gap: 10px;
 
-    background-color: #000000da;
-
+    background: linear-gradient(120deg, #525252, #0e0e0e);
+    /*background-color: #262626;*/
     overflow-y: auto;
 }
 
-.investimento{
+/* =========================================
+   ESTILIZAÇÃO INTERNA DO CARD DE INVESTIMENTO
+   ========================================= */
+
+/* Ajeitando o padding e o flex interno do card */
+.investimento {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Mantém os seus estilos anteriores de hover, background, border, etc */
+    position: relative;
+
+    overflow: hidden;
+
     margin: 10px;
+
     width: 250px;
-    height: 300px;
-    background-color: #1b032279;
-    padding: 0 12px;
+
+    height: auto;
+
+    border-radius: 16px;
+
+    background: #0f1115;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 32px;
+
+    box-shadow:
+
+        0 20px 40px -15px rgba(0, 0, 0, 0.7),
+
+        0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+
 }
+.investimento:hover {
+
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow:
+        0 30px 60px -15px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(59, 130, 246, 0.08);
+
+}
+
+.investimento::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 50%;
+
+    height: 100%;
+
+    background: linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255, 255, 255, 0.1),
+
+        transparent
+
+    );
+
+    transform: skewX(-20deg);
+
+    pointer-events: none;
+
+}
+
+
+
+.investimento:hover::after {
+
+    left: 150%;
+
+    transition: left 0.6s ease;
+
+}
+
+.inv-titulo {
+
+    margin: 0 0 8px 0;
+
+    font-family: 'Playfair Display', Georgia, serif;
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    color: #f3f4f6;
+
+    letter-spacing: 0.5px;
+
+    line-height: 1.2;
+
+}
+/* Badge (Etiqueta) do Tipo de Investimento */
+.inv-badge {
+    align-self: flex-start;
+    background: rgba(59, 130, 246, 0.15);
+    /* Azul translúcido */
+    color: #60a5fa;
+    /* Azul claro */
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Container de detalhes (A lista de infos) */
+.inv-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Espaço entre cada linha */
+    margin-bottom: 24px;
+}
+
+/* Cada linha de informação (Label na esquerda, Valor na direita) */
+.inv-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    padding-bottom: 8px;
+}
+
+.inv-linha:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Estilo dos Rótulos (Data, Valor, etc) */
+.inv-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #8a99ad;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Estilo dos Dados (Os números em si) */
+.inv-dado {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #f3f4f6;
+    font-weight: 500;
+    text-align: right;
+}
+.positivo { color: green; } 
+.negativo { color: red; }
+.bg-positivo { background-color: green; } 
+.bg-negativo { background-color: red; }
+/* =========================================
+   ÁREA DO FUTURO GRÁFICO (PLACEHOLDER)
+   ========================================= */
+.inv-grafico-area {
+    margin-top: auto;
+    /* Empurra pro final do card */
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.grafico-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.inv-dado.destaque {
+    color: #10b981;
+    /* Verde esmeralda para indicar lucro */
+    font-weight: 700;
+}
+
+/* O fundo da barra do gráfico */
+.grafico-barra-fundo {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* O preenchimento da barra (Simulando 60% de avanço) */
+.grafico-barra-preenchimento {
+    width: 60%;
+    /* Depois você pode alterar via JS com o cálculo real */
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #10b981);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+    transition: width 1s ease-in-out;
+}
+
+/* Animaçãozinha marota na barra ao passar o mouse no card */
+.investimento:hover .grafico-barra-preenchimento {
+    width: 75%;
+    filter: brightness(1.2);
+}
+
 .campo input,
 .campo select {
     width: 100%;
@@ -238,6 +440,36 @@ button.principal:hover {
 
     transition: border-color 0.2s, box-shadow 0.2s;
 }
+
+
+
+/* Largura da barra */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Fundo da barra (trilho) */
+::-webkit-scrollbar-track {
+    background: #1a1a1e;
+}
+
+/* Indicador de rolagem */
+::-webkit-scrollbar-thumb {
+    background: #383842;
+    border-radius: 4px;
+}
+
+/* Cor ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+    background: #525260;
+}
+
+/* Suporte para Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #383842 #1a1a1e;
+}
+
 
 .campo input::placeholder {
     color: #999;
@@ -264,7 +496,7 @@ button.principal:hover {
 #form-investimento button {
     width: 5px;
     height: 5px;
-    align-self: flex-end ;
+    align-self: flex-end;
     margin-top: 5px;
     margin-bottom: 5px;
     border: none;
@@ -443,7 +675,7 @@ button.principal:hover {
    BOTÃO ADICIONAR
 ========================= */
 
-#form-investimento > button[type="submit"] {
+#form-investimento>button[type="submit"] {
     width: 100%;
     height: 48px;
 
@@ -464,13 +696,13 @@ button.principal:hover {
     transition: all 0.2s ease;
 }
 
-#form-investimento > button[type="submit"]:hover {
+#form-investimento>button[type="submit"]:hover {
     background: #4f46e5;
 
     box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
 }
 
-#form-investimento > button[type="submit"]:active {
+#form-investimento>button[type="submit"]:active {
     transform: translateY(1px);
 }
 
@@ -488,11 +720,15 @@ button.principal:hover {
         padding: 24px 20px;
     }
 }
+
 /* =========================
    RESPONSIVIDADE
 ========================= */
 
 @media (max-width: 850px) {
+    #centralInvestimentos {
+        gap: 100;
+    }
 
     .navbar {
         padding: 20px;
@@ -505,13 +741,16 @@ button.principal:hover {
 
 
 @media (max-width: 600px) {
+    #centralInvestimentos {
+        margin-top: 15px;
+    }
 
     header {
         height: auto;
     }
 
     .navbar {
-        padding: 20px;
+        padding: 10px;
 
         flex-direction: column;
 

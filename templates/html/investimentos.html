@@ -51,18 +51,20 @@
             </div>
 
             <div class="campo">
-                <label for="Data">Data</label>
+                <label for="data">Início investimento</label>
                 <input type="date" id="data" name="data" placeholder="DD/MM/AA" maxlength="10" required>
+            </div>
+
+            <div class="campo">
+                <label for="data-fim">Vencimento</label>
+                <input type="date" id="data-fim" name="data-fim" placeholder="DD/MM/AA" maxlength="10" required>
             </div>
 
             <div class="campo">
                 <label for="tipo">Tipo de investimento</label>
 
                 <select id="tipo" name="tipo" required>
-                    <option value="" disabled selected>
-                        Selecione um tipo
-                    </option>
-
+                    <option value="" disabled selected>Selecione um tipo</option>
                     <option value="renda-fixa">Renda Fixa</option>
                     <option value="acao">Ação</option>
                     <option value="fii">FII</option>
@@ -75,28 +77,20 @@
 
             <div class="campo">
                 <label for="valor">Valor investido</label>
-
                 <input type="number" id="valor" name="valor" placeholder="Ex.: 1500.00" min="0" step="0.01" required>
             </div>
 
             <div class="campo">
                 <label for="juros">Juros / Rentabilidade</label>
-
                 <input type="text" id="juros" name="juros" placeholder="Ex.: 100% CDI, IPCA + 6%" required>
-
-                <small>
-                    Exemplos: 10% a.a. · 100% CDI · IPCA + 6%
-                </small>
+                <small>Exemplos: 10% a.a. · 100% CDI · IPCA + 6%</small>
             </div>
 
             <div class="campo">
                 <label for="periodicidade">Periodicidade dos juros</label>
 
                 <select id="periodicidade" name="periodicidade" required>
-                    <option value="" disabled selected>
-                        Selecione
-                    </option>
-
+                    <option value="" disabled selected>Selecione</option>
                     <option value="mensal">Mensal</option>
                     <option value="bimestral">Bimestral</option>
                     <option value="trimestral">Trimestral</option>
@@ -110,88 +104,86 @@
                 <label for="amortizacao">Amortização</label>
 
                 <select id="amortizacao" name="amortizacao" required>
-                    <option value="" disabled selected>
-                        Selecione
-                    </option>
-
+                    <option value="" disabled selected>Selecione</option>
                     <option value="mensal">Mensal</option>
                     <option value="bimestral">Bimestral</option>
                     <option value="trimestral">Trimestral</option>
                     <option value="semestral">Semestral</option>
                     <option value="anual">Anual</option>
                     <option value="vencimento">No vencimento</option>
-                    <option value="nao-amortiza">
-                        Não possui amortização
-                    </option>
+                    <option value="nao-amortiza">Não possui amortização</option>
                 </select>
             </div>
 
-            <button type="submit" class="principal">
-                Adicionar
-            </button>
+            <button type="submit" class="principal">Adicionar</button>
 
         </form>
-       <script>
-    const tipo = document.getElementById("tipo");
 
-    const campoJuros = document.getElementById("juros").closest(".campo");
-    const campoPeriodicidade = document.getElementById("periodicidade").closest(".campo");
-    const campoAmortizacao = document.getElementById("amortizacao").closest(".campo");
+        <script>
+            const tipo = document.getElementById("tipo");
 
-    const labelNome = document.querySelector('label[for="valor"]');
+            const juros = document.getElementById("juros");
+            const periodicidade = document.getElementById("periodicidade");
+            const amortizacao = document.getElementById("amortizacao");
+            const inputVencimento = document.getElementById("data-fim");
 
-    function atualizarCampos() {
-        const valor = tipo.value;
+            const campoJuros = juros.closest(".campo");
+            const campoPeriodicidade = periodicidade.closest(".campo");
+            const campoAmortizacao = amortizacao.closest(".campo");
+            const campoVencimento = inputVencimento.closest(".campo");
 
-        // Primeiro, mostra tudo
-        campoJuros.style.display = "";
-        campoPeriodicidade.style.display = "";
-        campoAmortizacao.style.display = "";
+            const labelValor = document.querySelector('label[for="valor"]');
 
-        // Criptomoeda
-        if (valor === "cripto") {
-            labelNome.textContent = "Quantidade de bitcoin";
+            function mostrarCampo(campo, input, mostrar) {
+                if (mostrar) {
+                    campo.style.display = "";
+                    input.required = true;
+                } else {
+                    campo.style.display = "none";
+                    input.required = false;
+                    input.value = "";
+                }
+            }
 
-            campoJuros.style.display = "none";
-            campoPeriodicidade.style.display = "none";
-            campoAmortizacao.style.display = "none";
-        }
+            function atualizarCampos() {
+                const valor = tipo.value;
 
-        // Ação
-        else if (valor === "acao") {
-            campoPeriodicidade.style.display = "none";
-            campoAmortizacao.style.display = "none";
-        }
+                // Padrão (Reseta todos os campos para visível/obrigatório antes de aplicar regras específicas)
+                mostrarCampo(campoJuros, juros, true);
+                mostrarCampo(campoPeriodicidade, periodicidade, true);
+                mostrarCampo(campoAmortizacao, amortizacao, true);
+                mostrarCampo(campoVencimento, inputVencimento, true);
 
-        // FII
-        else if (valor === "fii") {
-            campoAmortizacao.style.display = "none";
-        }
+                labelValor.textContent = "Valor investido";
 
-        // ETF
-        else if (valor === "etf") {
-            campoPeriodicidade.style.display = "none";
-            campoAmortizacao.style.display = "none";
-        }
+                // Criptomoeda
+                if (valor === "cripto") {
+                    labelValor.textContent = "Quantidade de bitcoin";
 
-        // Fundo
-        else if (valor === "fundo") {
-            campoAmortizacao.style.display = "none";
-        }
+                    mostrarCampo(campoJuros, juros, false);
+                    mostrarCampo(campoPeriodicidade, periodicidade, false);
+                    mostrarCampo(campoAmortizacao, amortizacao, false);
+                    mostrarCampo(campoVencimento, inputVencimento, false);
+                }
 
-        // Poupança
-        else if (valor === "poupanca") {
-            campoAmortizacao.style.display = "none";
-        }
+                // Ação ou ETF
+                else if (valor === "acao" || valor === "etf") {
+                    mostrarCampo(campoPeriodicidade, periodicidade, false);
+                    mostrarCampo(campoAmortizacao, amortizacao, false);
+                }
 
-        // Renda fixa
-        else if (valor === "renda-fixa") {
-            labelNome.textContent = "Nome do investimento";
-        }
-    }
+                // FII, Fundo ou Poupança
+                else if (valor === "fii" || valor === "fundo" || valor === "poupanca") {
+                    mostrarCampo(campoAmortizacao, amortizacao, false);
+                }
+            }
 
-    tipo.addEventListener("change", atualizarCampos);
-</script>
+            tipo.addEventListener("change", atualizarCampos);
+
+            // Roda a função uma vez no início para garantir que o formulário carregue correto
+            atualizarCampos();
+        </script>
+
 
     </div>
     <div id="centralInvestimentos"></div>

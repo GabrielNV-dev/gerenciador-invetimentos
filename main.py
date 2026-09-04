@@ -23,14 +23,12 @@ def infos():
 @app.route("/investimentos/ativos/entry", methods=["POST"])
 def entrada_ativos():
     investimento = request.get_json()
-    print(investimento)
 
-    caminho_arquivo = "investimentos.json"
     dados = []
 
-    if os.path.exists(caminho_arquivo):
+    if os.path.exists("investimentos.json"):
         try:
-            with open(caminho_arquivo, "r", encoding="utf-8") as f:
+            with open("investimentos.json", "r", encoding="utf-8") as f:
                 conteudo = f.read()
                 if conteudo.strip():
                     dados = json.loads(conteudo)
@@ -42,8 +40,7 @@ def entrada_ativos():
 
     dados.append(investimento)
 
-    # 3. Salva a lista atualizada no arquivo
-    with open(caminho_arquivo, "w", encoding="utf-8") as f:
+    with open("investimentos.json", "w", encoding="utf-8") as f:
         json.dump(dados, f, ensure_ascii=False, indent=4)
 
     return jsonify({

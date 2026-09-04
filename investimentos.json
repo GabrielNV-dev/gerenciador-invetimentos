@@ -1,38 +1,29 @@
 [
     {
-        "nome": "e3we2e21eqwewqewqdwq",
-        "data": "2026-09-19",
-        "tipo": "etf",
-        "valor": "3543",
-        "juros": "100%",
-        "periodicidade": "mensal",
-        "amortizacao": "vencimento"
-    },
-    {
-        "nome": "e3we2e21eqwewqewqdwqeqwewq",
-        "data": "2026-09-19",
+        "nome": "cra minerva",
+        "data": "2026-09-10",
         "tipo": "renda-fixa",
-        "valor": "3543",
-        "juros": "100%",
-        "periodicidade": "mensal",
+        "valor": "967.16",
+        "juros": "116,50% CDI",
+        "periodicidade": "semestral",
         "amortizacao": "vencimento"
     },
     {
-        "nome": "TGRE",
-        "data": "2026-09-09",
-        "tipo": "fii",
-        "valor": "3123.45",
-        "juros": "100%",
-        "periodicidade": "trimestral",
-        "amortizacao": "nao-amortiza"
+        "nome": "btc",
+        "data": "2026-09-17",
+        "tipo": "cripto",
+        "valor": "432",
+        "juros": null,
+        "periodicidade": null,
+        "amortizacao": null
     },
     {
-        "nome": "TGRE",
-        "data": "2026-09-09",
-        "tipo": "fii",
-        "valor": "3123.45",
-        "juros": "100%",
+        "nome": "oi",
+        "data": "2026-09-15",
+        "tipo": "renda-fixa",
+        "valor": "144",
+        "juros": "100% CDI",
         "periodicidade": "bimestral",
-        "amortizacao": "vencimento"
+        "amortizacao": "anual"
     }
 ]
